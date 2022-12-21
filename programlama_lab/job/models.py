@@ -8,7 +8,7 @@ class Job(models.Model):
     title = models.CharField(max_length=50)
     keywords = models.CharField(blank=True, max_length=200)
     description = models.CharField(blank=True, max_length=300)
-    image = models.ImageField(blank=True, upload_to='images/', null=True)
+    image = models.ImageField(blank=True, null=True)
     detail = models.TextField()
     #userid = ForeignKey('self', blank=True, null=True, related_name='children', on_delete=models.CASCADE)
     #category_id = ForeignKey('self', blank=True, null=True, related_name='children', on_delete=models.CASCADE)
@@ -18,3 +18,8 @@ class Job(models.Model):
     create_at = models.DateTimeField(auto_now_add=True)
     uptade_at = models.DateTimeField(auto_now=True)
     # Create your models here.
+
+    def __str__(self):
+       return self.title
+
+    
