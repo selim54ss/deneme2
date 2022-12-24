@@ -13,3 +13,12 @@ def job_list(request):
     return render(request, 'job-list.html', context)
     
 # Create your views here.
+def job_detail(request, category_slug, job_id):
+    job_detail= Job.objects.get(category_id__slug=category_slug, id = job_id)
+    
+    context = {
+        'job_detail' : job_detail
+
+    }
+
+    return render(request, 'job-detail.html', context)
