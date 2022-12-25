@@ -12,3 +12,5 @@ class JobAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields={'slug':('title',)}
 
+
+

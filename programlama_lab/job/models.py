@@ -25,6 +25,7 @@ class Job(models.Model):
         ('False', 'Hayir'),
     ) 
     
+    
     title = models.CharField(max_length=50)
     keywords = models.CharField(blank=True, max_length=200)
     description = models.CharField(blank=True, max_length=300, help_text="")
