@@ -10,7 +10,7 @@ class Category(models.Model):
     slug = models.SlugField(null=False, unique=True)
     description = models.CharField(blank=True, max_length=400)
     keywords = models.CharField(blank=True, max_length=200)
-    image = models.ImageField(blank=True, upload_to='images/')
+    image = models.ImageField(blank=True)
     status = models.CharField(max_length=10, choices=STATUS)
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
@@ -39,7 +39,6 @@ class Job(models.Model):
     status = models.CharField(max_length=10, choices=STATUS, blank=True)
     create_at = models.DateTimeField(auto_now_add=True)
     uptade_at = models.DateTimeField(auto_now=True)
-    # Create your models here.
 
     def __str__(self):
        return self.title
